@@ -1,0 +1,38 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table budgets {
+  id integer [primary key]
+  title varchar
+  description varchar
+  amount integer
+  payee_id integer
+  autopay boolean
+  frequency text
+  pay_date timestamp
+  backed_up boolean
+  created_on timestamp
+  edited_at timestamp 
+}
+
+Table payees {
+  id integer [primary key]
+  name varchar
+  description varchar
+  paybill text
+  account_number varchar
+  till text
+  phone text
+}
+
+Table transactions {
+  id integer [primary key]
+  credit integer
+  debit integer
+  backed_up boolean
+  created_on timestamp
+  edited_at timestamp 
+}
+
+Ref: payees.id < budgets.payee_id
+

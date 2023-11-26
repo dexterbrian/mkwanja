@@ -1,0 +1,48 @@
+workspace {
+
+    model {
+        user = person "User"
+        admin = person "Admin"
+        mkwanjaSoftwareSystem = softwareSystem "Mkwanja Software System" "The system that enables the user to budget, pay for expenses and restrict payments that are above budget" {
+            webapp = container "Mkwanja Web App as a PWA" "PWA - An app accessible via a browser and installable like a native app" "NextJS" {
+                user -> this "Uses"
+            }
+            adminApp = container "Admin Dashboard" "Displays data for the admin" "Directus" {
+                admin -> this "Uses"
+            }
+            localDatabase = container "Offline Database" "Stores all data for a single Mkwanja user offline and locally on the user's device" "IndexedDB" {
+                webapp -> this "Reads from and writes to"
+            }
+            apiApp = container "Mkwanja API App" "Runs the business logic as well as reading and writing data to the Online Database" "Express, Typescript" {
+                webapp -> this "Makes API calls to"
+            }
+            database = container "Online Database" "Stores all data for all Mkwanja users" "PostgreSQL" {
+                apiApp -> this "Reads from and writes to"
+                adminApp -> this "Reads from"
+            }
+        }
+        daraja = softwareSystem "Daraja API" "Mpesa's official API enabling 3rd parties to programmatically access Mpesa" {
+            mkwanjaSoftwareSystem -> this "Send and receive money"
+            apiApp -> this "Calls"
+        }
+        africasTalking = softwareSystem "Africa's Talking API" "A service that enables programmatically sending SMS via an API" {
+            mkwanjaSoftwareSystem -> this "Send important app notifications as SMS"
+            apiApp -> this "Calls"
+        }
+    }
+
+    views {
+        systemContext mkwanjaSoftwareSystem {
+            include *
+            autolayout lr
+        }
+
+        container mkwanjaSoftwareSystem {
+            include *
+            autolayout lr
+        }
+
+        theme default
+    }
+
+}
