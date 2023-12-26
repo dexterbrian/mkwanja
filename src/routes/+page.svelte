@@ -1,2 +1,2 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h4>Welcome to Mkwanja</h4>
+<p>Visit <a href="https://mkwanja.appify.co.ke">mkwanja.appify.co.ke</a> to learn more about Mkwanja.</p>
