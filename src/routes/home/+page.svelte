@@ -1,5 +1,4 @@
 <script>
-    import defaultProfileImage from '../../lib/images/3d-assets/3d-profile-default/3d-profile-default.png';
     import './home.css';
     import ProfileContainer from './ProfileContainer.svelte';
 </script>
