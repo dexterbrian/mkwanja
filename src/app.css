@@ -5,3 +5,7 @@
 :root {
     background-color: white;
 }
+
+* {
+    font-family: 'Inter', sans-serif;
+}
