@@ -1,0 +1,39 @@
+/* Profile Container */
+#profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 17px 0px 17px 0px;
+}
+
+#edit-profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#edit-profile-button {
+    background-color: #9EAFFF;
+    border-radius: 6px;
+}
+
+#profile-pic {
+    margin-right: 3px;
+}
+
+#edit-icon {
+    margin: 9px;
+}
+
+/* 
+#profile-info {
+    margin-right: 15px;
+} */
+
+#name {
+    color: black;
+}
+
+#amount-saved {
+    color: #4b4efc;
+}
