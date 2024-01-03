@@ -6,39 +6,40 @@ export const user = {
     availableBalance: 44840
 }
 
-// Getting current month and year
+// Getting current timestamp
 const currentDate = new Date();
-const month = currentDate.toLocaleString('default', { month: 'short' });
-const year = currentDate.getFullYear();
-export const monthAndYear = `${month} ${year}`;
-
 const timestamp = currentDate.toISOString().replace('T', ' ').replace(/\..+/, ''); // Output: 2022-02-10 15:30:45
 
 export const budget = [
     {
         id: 1,
         name: 'Shopping',
-        amount: 4000
+        amount: 4000,
+        createdOn: '2023-12-31 12:35:30'
     },
     {
         id: 2,
         name: 'Food',
-        amount: 3000
+        amount: 3000,
+        createdOn: '2023-12-31 12:40:30'
     },
     {
         id: 3,
         name: 'Entertainment',
-        amount: 4000
+        amount: 4000,
+        createdOn: '2023-12-31 12:45:30'
     },
     {
         id: 4,
         name: 'Travel',
-        amount: 1000
+        amount: 1000,
+        createdOn: '2023-12-31 12:50:30'
     },
     {
         id: 5,
         name: 'Rent',
-        amount: 10000
+        amount: 10000,
+        createdOn: '2023-12-31 12:55:30'
     }
 ];
 
@@ -49,7 +50,7 @@ export const transactions = [
         description: '',
         categoryId: 1,
         amount: 1000,
-        date: timestamp
+        date: '2024-01-02 11:20:55'
     },
     {
         id: 2,
@@ -57,7 +58,7 @@ export const transactions = [
         description: '',
         categoryId: 2,
         amount: 2000,
-        date: timestamp
+        date: '2024-01-02 11:30:55'
     },
     {
         id: 3,
@@ -65,7 +66,7 @@ export const transactions = [
         description: '',
         categoryId: 3,
         amount: 3000,
-        date: timestamp
+        date: '2024-01-01 11:20:55'
     },
     {
         id: 4,
@@ -73,7 +74,7 @@ export const transactions = [
         description: '',
         categoryId: 4,
         amount: 1000,
-        date: timestamp
+        date: '2024-01-03 10:10:55'
     },
     {
         id: 5,
@@ -81,6 +82,6 @@ export const transactions = [
         description: '',
         categoryId: 5,
         amount: 10000,
-        date: timestamp
+        date: '2024-01-03 12:40:55'
     }
 ]
