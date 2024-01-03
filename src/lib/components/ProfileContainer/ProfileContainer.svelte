@@ -1,6 +1,6 @@
 <script>
-    import defaultProfileImage from '../../lib/images/3d-assets/3d-profile-default/3d-profile-default.png';
-    import './home.css';
+    import defaultProfileImage from '../../images/3d-assets/3d-profile-default/3d-profile-default.png';
+    import './ProfileContainer.css';
 </script>
 
 <div id="profile-container">
