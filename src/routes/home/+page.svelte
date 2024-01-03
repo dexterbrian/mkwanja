@@ -1,11 +1,12 @@
 <script>
   import './home.css';
   import ProfileContainer from '../../lib/components/ProfileContainer/ProfileContainer.svelte';
-	import BudgetCard from '$lib/components/BudgetCard/BudgetCard.svelte';
-  import TransactionCard from '$lib/components/TransactionCard/TransactionCard.svelte';
+	import BudgetCard from '$lib/components/BudgetCard.svelte';
+  import TransactionCard from '$lib/components/TransactionCard.svelte';
 
   // Load data from db via server
   import { user, budget, transactions } from '$lib/sampledata.js';
+	import QuickActions from '$lib/components/QuickActions.svelte';
 
   // Getting current month and year
   const currentDate = new Date();
@@ -68,6 +69,16 @@
       <div class="mt-3">
         <TransactionCard name={transactions[0].name} amount={`${user.currency} ${transactions[0].amount}`} date={transactions[0].date} description={transactions[0].description} type={transactions[0].type}/>
         <TransactionCard name={transactions[2].name} amount={`${user.currency} ${transactions[2].amount}`} date={transactions[2].date} description={transactions[2].description} type={transactions[2].type}/>
+      </div>
+    </div>
+
+    <!-- Quick Actions Section -->
+    <div id="quick-actions" class="mt-4 text-black">
+      <h2 class="text-lg">Quick Actions</h2>
+      <div class="mt-3 mb-3 flex flex-row justify-between">
+        <QuickActions type='Send'/>
+        <QuickActions type='Receive'/>
+        <QuickActions type='History'/>
       </div>
     </div>
   </div>
