@@ -2,7 +2,7 @@
     export let name: string, amount: any, date: string, type: string, description: string;
 </script>
 
-<div class="my-card flex flex-row border justify-between border-secondary rounded-xl p-4 mb-3">
+<div class="flex flex-row border justify-between border-secondary rounded-xl p-4 mb-3">
     <div class="flex flex-row">
         <div class="p-4 bg-secondary rounded-xl mr-3">
             {#if type === "income"}
@@ -17,5 +17,4 @@
         <strong class="text-xl">{amount}</strong>
         <span class="text-xs">{date}</span>
     </div>
-    
 </div>
