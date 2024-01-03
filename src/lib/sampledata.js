@@ -43,11 +43,26 @@ export const budget = [
     }
 ];
 
+export const income = [
+    {
+        id: 1,
+        name: 'Salary',
+        amount: 50000,
+        createdOn: '2023-12-31 12:35:30'
+    },
+    {
+        id: 2,
+        name: 'Freelance',
+        createdOn: '2023-12-31 12:40:30'
+    }
+]
+
 export const transactions = [
     {
         id: 1,
         name: 'Shopping',
         description: '',
+        type: 'expense',
         categoryId: 1,
         amount: 1000,
         date: '2024-01-02 11:20:55'
@@ -56,15 +71,17 @@ export const transactions = [
         id: 2,
         name: 'Food',
         description: '',
+        type: 'expense',
         categoryId: 2,
         amount: 2000,
         date: '2024-01-02 11:30:55'
     },
     {
         id: 3,
-        name: 'Entertainment',
+        name: 'Freelance project',
         description: '',
-        categoryId: 3,
+        type: 'income',
+        categoryId: 1,
         amount: 3000,
         date: '2024-01-01 11:20:55'
     },
@@ -72,6 +89,7 @@ export const transactions = [
         id: 4,
         name: 'Travel',
         description: '',
+        type: 'expense',
         categoryId: 4,
         amount: 1000,
         date: '2024-01-03 10:10:55'
@@ -80,6 +98,7 @@ export const transactions = [
         id: 5,
         name: 'Rent',
         description: '',
+        type: 'expense',
         categoryId: 5,
         amount: 10000,
         date: '2024-01-03 12:40:55'
