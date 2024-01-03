@@ -7,6 +7,7 @@
   // Load data from db via server
   import { user, budget, transactions } from '$lib/sampledata.js';
 	import QuickActions from '$lib/components/QuickActions.svelte';
+	import BottomBar from '$lib/components/BottomBar.svelte';
 
   // Getting current month and year
   const currentDate = new Date();
@@ -81,5 +82,8 @@
         <QuickActions type='History'/>
       </div>
     </div>
+
+    <!-- Bottom Bar -->
+    <BottomBar/>
   </div>
 </div>
