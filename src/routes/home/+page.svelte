@@ -2,6 +2,7 @@
   import './home.css';
   import ProfileContainer from '../../lib/components/ProfileContainer/ProfileContainer.svelte';
 	import BudgetCard from '$lib/components/BudgetCard/BudgetCard.svelte';
+  import TransactionCard from '$lib/components/TransactionCard/TransactionCard.svelte';
 
   // Load data from db via server
   import { user, budget, transactions } from '$lib/sampledata.js';
@@ -59,6 +60,15 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div id="recent-activity" class="mt-4 text-black">
+      <h2 class="text-lg">Recent Activity</h2>
+      <div class="mt-3">
+        <TransactionCard name={transactions[0].name} amount={`${user.currency} ${transactions[0].amount}`} date={transactions[0].date} description={transactions[0].description} type={transactions[0].type}/>
+        <TransactionCard name={transactions[2].name} amount={`${user.currency} ${transactions[2].amount}`} date={transactions[2].date} description={transactions[2].description} type={transactions[2].type}/>
+      </div>
+      
     </div>
   </div>
 </div>
